@@ -119,7 +119,7 @@ async def ban_all_cancel(bot, msg, user_group, user_qq):
 async def warm(bot, msg, user_group, user_qq):
     content = re.findall(r"警告(.+)",msg)[0]
     warm_qq = content
-    CONFIG_PATH = "./plugins/manage/data/warm.ini"
+    CONFIG_PATH = "./plugins/GroupManager/data/warm.ini"
     config = configparser.ConfigParser()
     config.read(CONFIG_PATH,encoding='UTF-8')
     try:
@@ -153,7 +153,7 @@ async def warm(bot, msg, user_group, user_qq):
 async def warm_cancel(bot, msg, user_group, user_qq):
     content = re.findall(r"清空警告(.+)",msg)[0]
     warm_qq = content
-    CONFIG_PATH = "./plugins/manage/data/warm.ini"
+    CONFIG_PATH = "./plugins/GroupManager/data/warm.ini"
     config = configparser.ConfigParser()
     config.read(CONFIG_PATH,encoding='UTF-8')
     try:
@@ -228,8 +228,6 @@ async def title(bot, msg, user_group, user_qq):
     try:
         #set_group_special_title成功也会报错
         await bot.set_group_special_title(group_id=user_group,user_id=title_qq,special_title=title_name)
-        print(title_qq)
-        print(title_name)
     except:
         #随便一句
         message = "操作失败"
