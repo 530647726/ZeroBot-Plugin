@@ -2,6 +2,7 @@
 一个高效管理群聊的机器人插件
 
 [![License](https://img.shields.io/github/license/Yiwen-Chan/GroupManagerBot.svg)](https://raw.githubusercontent.com/Yiwen-Chan/GroupManagerBot/master/LICENSE)
+[![QQ 群](https://img.shields.io/badge/qq%E7%BE%A4-1048452984-orange.svg)](https://raw.githubusercontent.com/Yiwen-Chan/GroupManagerBot/master/LICENSE)
 
 ## 开始使用
 本项目符合 OneBot标准
@@ -10,8 +11,8 @@
 - [x] 禁言
 - [x] 解除禁言
 - [x] 全员禁言
-- [x] 解除全员禁言
-- [] 撤回
+- [x] 解除全员禁言v
+- [ ] 撤回
 - [x] 警告
 - [x] 清空警告
 - [x] 踢出
