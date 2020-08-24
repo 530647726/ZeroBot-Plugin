@@ -1,7 +1,7 @@
 # GroupManagerBot
 一个高效管理群聊的机器人插件
 
-[![License](https://img.shields.io/github/license/Yiwen-Chan/GroupManagerBot.svg)]
+[![License](https://img.shields.io/github/license/Yiwen-Chan/GroupManagerBot.svg)](https://raw.githubusercontent.com/Yiwen-Chan/GroupManagerBot/master/LICENSE)
 
 ## 开始使用
 本项目符合 OneBot标准
