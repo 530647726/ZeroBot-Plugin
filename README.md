@@ -1,14 +1,17 @@
 # GroupManagerBot
 一个高效管理群聊的机器人插件
 
+[![License](https://img.shields.io/badge/license-GPL-3.0-green.svg)]
+
 ## 开始使用
+本项目符合 OneBot标准
 
-
-## 已经实现
+## 功能列表
 - [x] 禁言
 - [x] 解除禁言
 - [x] 全员禁言
 - [x] 解除全员禁言
+- [] 撤回
 - [x] 警告
 - [x] 清空警告
 - [x] 踢出
