@@ -39,6 +39,12 @@ async def handling_private_messages(bot, msg, user_group, user_qq):
     elif re.match(r"群聊转发(.+)\*(.+)",msg):
         await group_msg(bot, msg, user_group, user_qq)
 
+async def send_msg(bot, message, user_group, user_qq):
+    if user_group == "8888":
+        await bot.send_private_msg(user_id=user_qq, message=message)
+    else:
+        await bot.send_group_msg(group_id=user_group, message=message)
+
 async def manage_system(bot, msg, user_group, user_qq):
     if user_group == "8888":
         message = "\
@@ -197,10 +203,7 @@ async def leave(bot, msg, user_group, user_qq):
         await bot.set_group_leave(group_id=leave_group)
     except:
         message = "操作失败"
-    if user_group == "8888":
-        await bot.send_private_msg(user_id=user_qq, message=message)
-    else:
-        await bot.send_group_msg(group_id=user_group, message=message)
+    await send_msg(bot, message, user_group, user_qq)
 
 async def card(bot, msg, user_group, user_qq):
     content = re.findall(r"修改群名片(.+)\*(.+)",msg)[0]
@@ -246,10 +249,7 @@ async def private_msg(bot, msg, user_group, user_qq):
         await bot.send_private_msg(user_id=private_msg_qq, message=private_msg)
     except:
         message = "操作失败"
-    if user_group == "8888":
-        await bot.send_private_msg(user_id=user_qq, message=message)
-    else:
-        await bot.send_group_msg(group_id=user_group, message=message)
+    await send_msg(bot, message, user_group, user_qq)
 
 async def group_msg(bot, msg, user_group, user_qq):
     content = re.findall(r"群聊转发(.+)\*(.+)",msg)[0]
@@ -264,8 +264,5 @@ async def group_msg(bot, msg, user_group, user_qq):
         await bot.send_group_msg(group_id=group_msg_group, message=group_msg)
     except:
         message = "操作失败"
-    if user_group == "8888":
-        await bot.send_private_msg(user_id=user_qq, message=message)
-    else:
-        await bot.send_group_msg(group_id=user_group, message=message)
+    await send_msg(bot, message, user_group, user_qq)
 
