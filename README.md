@@ -47,4 +47,4 @@
 
 ## 感谢
 
-[Richard Chien](https://github.com/richardchien): [CQHTTP](https://github.com/richardchien/coolq-http-api) 和 [NoneBot](https://github.com/nonebot/nonebot)
+[Richard Chien](https://github.com/richardchien): [CQHTTP](https://github.com/richardchien/coolq-http-api) ， [NoneBot](https://github.com/nonebot/nonebot) 和 [qq-bot-api](https://github.com/catsworld/qq-bot-api)
