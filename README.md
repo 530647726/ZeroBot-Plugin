@@ -17,7 +17,7 @@
 
 注意：本插件使用websocket与cqhttp项目进行交互，非反向ws
 
-1.下载对应版本的release
+1.下载对应版本的release，可直接运行
 
 2.第一次运行自动产生config.json，修改后再次运行
 
@@ -35,20 +35,6 @@
 - [x] 设置群头衔
 - [x] 私聊转发
 - [x] 群聊转发
-
-## 工程结构
-
-```
-GroupManagerBot
-├── ...
-├── plugins/GroupManager
-|   ├── __init__.py
-|   ├── config.py
-│   └── manager.py
-├── config.py
-├── runserver.py
-└── ...
-```
 
 ## 开源许可
 
