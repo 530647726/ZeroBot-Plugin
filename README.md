@@ -1,4 +1,4 @@
-# GroupManagerBot
+# GroupManager
 一个高效管理群聊的机器人插件
 
 [![License](https://img.shields.io/github/license/Yiwen-Chan/GroupManagerBot.svg)](https://raw.githubusercontent.com/Yiwen-Chan/GroupManagerBot/master/LICENSE)
