@@ -23,7 +23,7 @@
 
 3.发送“群管系统”呼出菜单
 
-##配置相关
+## 配置相关
 
 GroupManager设置(GroupManager\config.json)
 ```json
