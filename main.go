@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/catsworld/qq-bot-api"
+	"github.com/Yiwen-Chan/qq-bot-api"
 	"regexp"
-	"test/global"
+	"github.com/Yiwen-Chan/GroupManager/qq-bot-api"
 	"time"
 
 	log "github.com/sirupsen/logrus"
