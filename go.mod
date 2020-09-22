@@ -1,4 +1,4 @@
-module GroupManager
+module groupmanager
 
 go 1.14
 
