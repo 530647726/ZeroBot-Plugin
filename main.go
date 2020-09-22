@@ -9,7 +9,7 @@ import (
 
 	log "github.com/sirupsen/logrus"
 )
-t
+
 func main() {
 	log.Printf("GroupManager 正在启动")
 	var conf *global.JsonConfig
