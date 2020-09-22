@@ -1,4 +1,4 @@
-module GroupManager
+module github.com/Yiwen-Chan/GroupManager
 
 go 1.14
 
