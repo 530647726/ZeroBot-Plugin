@@ -1,5 +1,5 @@
 # GroupManager
-一个高效管理群聊的机器人插件
+一个基于cqhttp的点开即用的管理群聊插件
 
 [![License](https://img.shields.io/github/license/Yiwen-Chan/GroupManagerBot.svg)](https://raw.githubusercontent.com/Yiwen-Chan/GroupManagerBot/master/LICENSE)
 [![QQ 群](https://img.shields.io/badge/qq%E7%BE%A4-1048452984-green.svg)](https://jq.qq.com/?_wv=1027&k=QMb7x1mM)
