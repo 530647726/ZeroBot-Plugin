@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/Yiwen-Chan/qq-bot-api"
 	"regexp"
-	"groupmganager/global"
+	"groupmanager/global"
 	"time"
 
 	log "github.com/sirupsen/logrus"
