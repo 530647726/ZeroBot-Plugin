@@ -68,8 +68,8 @@ func main() {
 退出群聊[群号]
 修改群名片[QQ]/[@QQ] [内容]
 设置群头衔[QQ]/[@QQ] [内容]
+群聊转发[群] [内容]
 私聊转发[QQ]/[@QQ] [内容]
-群聊转发[QQ]/[@QQ] [内容]
 注：[QQ]和[内容]之间带空格
 ===================`
 			bot.SendMessage(update.Message.Chat.ID, update.Message.Chat.Type, message)
