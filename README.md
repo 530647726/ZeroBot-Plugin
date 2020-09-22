@@ -23,6 +23,21 @@
 
 3.发送“群管系统”呼出菜单
 
+###cqhttp-mirai ws设置如下
+```yaml
+  # 正向Websocket服务器
+  ws:
+    # 可选，是否启用正向Websocket服务器，默认不启用
+    enable: true
+    # 可选，上报消息格式，string 为字符串格式，array 为数组格式, 默认为string
+    postMessageFormat: string
+    # 可选，访问口令, 默认为空, 即不设置Token
+    accessToken: ""
+    # 监听主机
+    wsHost: "127.0.0.1"
+    # 监听端口
+    wsPort: 2333
+```
 ## 功能列表
 - [x] 禁言
 - [x] 解除禁言
