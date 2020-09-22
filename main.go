@@ -59,7 +59,18 @@ func main() {
 		}
 
 		if update.Message.Text == "群管系统" {
-			message := "菜单还没做呢~"
+			message := `=====>群管系统<=====
+开启全员禁言
+解除全员禁言
+禁言[QQ]/[@QQ] [分钟]
+解除禁言[QQ]/[@QQ]
+踢出[QQ]/[@QQ]
+退出群聊[群号]
+修改群名片[QQ]/[@QQ] [内容]
+设置群头衔[QQ]/[@QQ] [内容]
+私聊转发[QQ]/[@QQ] [内容]
+群聊转发[QQ]/[@QQ] [内容]
+===================`
 			bot.SendMessage(update.Message.Chat.ID, update.Message.Chat.Type, message)
 		}
 		if update.Message.Text == "开启全员禁言" {
