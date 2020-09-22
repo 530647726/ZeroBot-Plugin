@@ -23,8 +23,19 @@
 
 3.发送“群管系统”呼出菜单
 
-###cqhttp-mirai ws设置如下
+##配置相关
+
+GroupManager设置(GroupManager\config.json)
+```json
+{
+	"master": 12345678,
+	"host": "127.0.0.1",
+	"port": 2333
+}
+```
+若使用cqhttp-mirai，则配置如下(miraiOK\plugins\CQHTTPMirai\setting.yml)
 ```yaml
+...
   # 正向Websocket服务器
   ws:
     # 可选，是否启用正向Websocket服务器，默认不启用
@@ -37,6 +48,17 @@
     wsHost: "127.0.0.1"
     # 监听端口
     wsPort: 2333
+...
+```
+若使用go-cqhttp，则配置如下(go-cqhttp/config.json)
+```json
+...
+	"ws_config": {
+		"enabled": true,
+		"host": "0.0.0.0",
+		"port": 6700
+	},
+...
 ```
 ## 功能列表
 - [x] 禁言
