@@ -1,8 +1,6 @@
-module test
+module GroupManager
 
 go 1.14
-
-replace test => github.com/Yiwen-Chan/GroupManager v0.1.2
 
 require (
 	github.com/mitchellh/mapstructure v1.3.3 // indirect
