@@ -4,12 +4,12 @@ import (
 	"fmt"
 	"github.com/Yiwen-Chan/qq-bot-api"
 	"regexp"
-	"github.com/Yiwen-Chan/GroupManager/golbal"
+	"test/golbal"
 	"time"
 
 	log "github.com/sirupsen/logrus"
 )
-
+t
 func main() {
 	log.Printf("GroupManager 正在启动")
 	var conf *global.JsonConfig
