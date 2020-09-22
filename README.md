@@ -55,11 +55,12 @@ GroupManager设置(GroupManager\config.json)
 ...
 	"ws_config": {
 		"enabled": true,
-		"host": "0.0.0.0",
-		"port": 6700
+		"host": "127.0.0.1",
+		"port": 2333
 	},
 ...
 ```
+注意:以上仅列出了与ws相关设置，其他配置可自行摸索或找我配置
 ## 功能列表
 - [x] 禁言
 - [x] 解除禁言
