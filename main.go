@@ -3,8 +3,8 @@ package main
 import (
 	"fmt"
 	"github.com/Yiwen-Chan/qq-bot-api"
-	"regexp"
 	"groupmanager/global"
+	"regexp"
 	"time"
 
 	log "github.com/sirupsen/logrus"
@@ -53,6 +53,24 @@ func main() {
 		}
 
 		log.Printf("[%s] %s", update.Message.From.String(), update.Message.Text)
+
+		r = regexp.MustCompile("申请头衔(.+)")
+		if r.MatchString(update.Message.Text) {
+			parm := r.FindAllStringSubmatch(update.Message.Text, -1)
+			content := findInt(parm[0][1])
+			m, err := bot.SetChatMemberTitle(update.GroupID, update.UserID, content, 6000000000)
+			if err != nil {
+				log.Fatal(err)
+			}
+			log.Printf("%s %s", "[群管系统] 申请头衔 ", m.Status)
+			if m.Status == "ok" {
+				message := "已修改"
+				bot.SendMessage(update.Message.Chat.ID, update.Message.Chat.Type, message)
+			} else {
+				message := "姬气人没有权限呢~"
+				bot.SendMessage(update.Message.Chat.ID, update.Message.Chat.Type, message)
+			}
+		}
 
 		if update.UserID != conf.Master {
 			continue
