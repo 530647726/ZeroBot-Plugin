@@ -57,7 +57,7 @@ func main() {
 		r := regexp.MustCompile("申请头衔(.+)")
 		if r.MatchString(update.Message.Text) {
 			parm := r.FindAllStringSubmatch(update.Message.Text, -1)
-			content := findInt(parm[0][1])
+			content := parm[0][1]
 			m, err := bot.SetChatMemberTitle(update.GroupID, update.UserID, content, 6000000000)
 			if err != nil {
 				log.Fatal(err)
