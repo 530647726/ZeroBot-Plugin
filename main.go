@@ -54,7 +54,7 @@ func main() {
 
 		log.Printf("[%s] %s", update.Message.From.String(), update.Message.Text)
 
-		r = regexp.MustCompile("申请头衔(.+)")
+		r := regexp.MustCompile("申请头衔(.+)")
 		if r.MatchString(update.Message.Text) {
 			parm := r.FindAllStringSubmatch(update.Message.Text, -1)
 			content := findInt(parm[0][1])
@@ -120,7 +120,7 @@ func main() {
 				bot.SendMessage(update.Message.Chat.ID, update.Message.Chat.Type, message)
 			}
 		}
-		r := regexp.MustCompile("禁言(.+)\\s(.+)")
+		r = regexp.MustCompile("禁言(.+)\\s(.+)")
 		if r.MatchString(update.Message.Text) {
 			parm := r.FindAllStringSubmatch(update.Message.Text, -1)
 			target := findInt(parm[0][1])
