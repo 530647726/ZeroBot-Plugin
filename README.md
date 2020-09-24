@@ -71,6 +71,8 @@ GroupManager设置(GroupManager\config.json)
 - [x] 退出群聊
 - [x] 修改群名片
 - [x] 设置群头衔
+- [ ] 入群欢迎
+- [ ] 退群通知
 - [ ] 同意好友添加
 - [ ] 同意群聊邀请
 - [x] 私聊转发
