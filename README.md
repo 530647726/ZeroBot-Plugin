@@ -82,7 +82,7 @@ GroupManager设置(GroupManager\config.json)
 - [ ] 敏感词
 - [ ] 黑白名单
 
-* 仅在go-cqhttp支持
+\* 仅在go-cqhttp支持
 
 ## 开源许可
 
