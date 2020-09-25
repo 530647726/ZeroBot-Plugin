@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/Yiwen-Chan/qq-bot-api"
 	"groupmanager/global"
+	"groupmanager/modules"
 	"regexp"
 	"time"
 
@@ -59,6 +60,10 @@ func main() {
 				bot.SendMessage(update.GroupID, "group", message)
 			}
 		}
+
+		modules.Friend_add_request(bot, conf, update)
+		modules.Group_add_request(bot, conf, update)
+
 		if update.Message == nil {
 			continue
 		} else {
