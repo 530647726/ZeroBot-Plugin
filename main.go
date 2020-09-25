@@ -49,17 +49,10 @@ func main() {
 
 	log.Printf("GroupManager 启动完毕，正在运行")
 	for update := range updates {
-		if update.PostType == "notice" {
-			log.Printf("[群管系统] 收到：%s,%s", update.NoticeType, update.GroupID)
-			if update.NoticeType == "group_increase" {
-				message := "欢迎新人入群~"
-				bot.SendMessage(update.GroupID, "group", message)
-			}
-			if update.NoticeType == "group_decrease" {
-				message := "非常遗憾，有人退群了~"
-				bot.SendMessage(update.GroupID, "group", message)
-			}
-		}
+
+		modules.Group_increase_notice(bot, conf, update)
+		modules.Group_decrease_notice(bot, conf, update)
+		modules.Notify_notice(bot, conf, update)
 
 		modules.Friend_add_request(bot, conf, update)
 		modules.Group_add_request(bot, conf, update)
