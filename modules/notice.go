@@ -33,11 +33,18 @@ func Notify_notice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotap
 	if update.PostType == "notice" {
 		log.Printf("[群管系统] 收到：%s,%s", update.NoticeType, update.GroupID)
 		if update.NoticeType == "notify" {
-			time.Sleep(time.Second * 2)
-			message := "请不要戳我 >_<"
-			bot.SendMessage(update.GroupID, "group", message)
-			message = fmt.Sprintf("[CQ:poke,qq=%v]", update.UserID)
-			bot.SendMessage(update.GroupID, "group", message)
+			bot_info, err := bot.GetLoginInfo()
+			if err != nil {
+				log.Fatal(err)
+			}
+			if update.TargetID == bot_info.ID {
+				time.Sleep(time.Second * 2)
+				message := "请不要戳我 >_<"
+				bot.SendMessage(update.GroupID, "group", message)
+				message = fmt.Sprintf("[CQ:poke,qq=%v]", update.UserID)
+				bot.SendMessage(update.GroupID, "group", message)
+			}
+
 		}
 	}
 }

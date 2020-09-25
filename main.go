@@ -48,6 +48,7 @@ func main() {
 	updates, err := bot.GetUpdatesChan(u)
 
 	log.Printf("GroupManager 启动完毕，正在运行")
+
 	for update := range updates {
 
 		modules.Group_increase_notice(bot, conf, update)
