@@ -9,30 +9,68 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func Group_increase_notice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotapi.Update) {
-	if update.PostType == "notice" {
-		log.Printf("[群管系统] 收到：%s,%s", update.NoticeType, update.GroupID)
-		if update.NoticeType == "group_increase" {
-			message := "欢迎新人入群~"
-			bot.SendMessage(update.GroupID, "group", message)
+func Notice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotapi.Update) {
+	GroupIncreaseNotice(bot, conf, update)
+	GroupDecreaseNotice(bot, conf, update)
+	NotifyNotice(bot, conf, update)
+}
+
+func GroupIncreaseNotice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotapi.Update) {
+	commandName := "GroupIncreaseNotice"
+	if update.NoticeType == "group_increase" {
+		//触发命令
+		commandType := "[群管系统-notice]"
+		command := update.RequestType
+		userID := update.UserID
+		groupID := update.GroupID
+		log.Printf("%v[收到] |触发命令|%v |触发者|%v |触发群聊|%v", commandType, command, userID, groupID)
+		if global.Authority(commandName, userID, conf) {
+			//命令解析
+			//执行命令
+			message := conf.BackOk.GroupIncreaseNotice
+			bot.SendMessage(conf.Master, "private", message)
+			//返回命令结果
+			log.Printf("%v[完成] |触发命令|%v |触发者|%v |触发群聊|%v", commandType, command, userID, groupID)
+		} else {
+			log.Printf("%v[完成] |触发命令|%v !!!!!!!没有权限或者状态为关!!!!!!!", commandType, command)
 		}
 	}
 }
 
-func Group_decrease_notice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotapi.Update) {
-	if update.PostType == "notice" {
-		log.Printf("[群管系统] 收到：%s,%s", update.NoticeType, update.GroupID)
-		if update.NoticeType == "group_decrease" {
-			message := "非常遗憾，有人退群了~"
-			bot.SendMessage(update.GroupID, "group", message)
+func GroupDecreaseNotice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotapi.Update) {
+	commandName := "GroupDecreaseNotice"
+	if update.NoticeType == "group_decrease" {
+		//触发命令
+		commandType := "[群管系统-notice]"
+		command := update.RequestType
+		userID := update.UserID
+		groupID := update.GroupID
+		log.Printf("%v[收到] |触发命令|%v |触发者|%v |触发群聊|%v", commandType, command, userID, groupID)
+		if global.Authority(commandName, userID, conf) {
+			//命令解析
+			//执行命令
+			message := conf.BackOk.GroupDecreaseNotice
+			bot.SendMessage(conf.Master, "private", message)
+			//返回命令结果
+			log.Printf("%v[完成] |触发命令|%v |触发者|%v |触发群聊|%v", commandType, command, userID, groupID)
+		} else {
+			log.Printf("%v[完成] |触发命令|%v !!!!!!!没有权限或者状态为关!!!!!!!", commandType, command)
 		}
 	}
 }
 
-func Notify_notice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotapi.Update) {
-	if update.PostType == "notice" {
-		log.Printf("[群管系统] 收到：%s,%s", update.NoticeType, update.GroupID)
-		if update.NoticeType == "notify" {
+func NotifyNotice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotapi.Update) {
+	commandName := "NotifyNotice"
+	if update.NoticeType == "notify" {
+		//触发命令
+		commandType := "[群管系统-notice]"
+		command := update.RequestType
+		userID := update.UserID
+		groupID := update.GroupID
+		log.Printf("%v[收到] |触发命令|%v |触发者|%v |触发群聊|%v", commandType, command, userID, groupID)
+		if global.Authority(commandName, userID, conf) {
+			//命令解析
+			//执行命令
 			bot_info, err := bot.GetLoginInfo()
 			if err != nil {
 				log.Fatal(err)
@@ -44,7 +82,10 @@ func Notify_notice(bot *qqbotapi.BotAPI, conf *global.JsonConfig, update qqbotap
 				message = fmt.Sprintf("[CQ:poke,qq=%v]", update.UserID)
 				bot.SendMessage(update.GroupID, "group", message)
 			}
-
+			//返回命令结果
+			log.Printf("%v[完成] |触发命令|%v |触发者|%v |触发群聊|%v", commandType, command, userID, groupID)
+		} else {
+			log.Printf("%v[完成] |触发命令|%v !!!!!!!没有权限或者状态为关!!!!!!!", commandType, command)
 		}
 	}
 }
